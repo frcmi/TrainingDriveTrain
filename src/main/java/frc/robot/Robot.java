@@ -38,6 +38,7 @@ public class Robot extends TimedRobot {
     
     CommandScheduler.getInstance().enable();
     CameraServer.getInstance().startAutomaticCapture();
+    container.drive.setInverted();
   
   }
 
