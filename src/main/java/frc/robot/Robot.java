@@ -48,7 +48,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     
-    CommandScheduler.getInstance().schedule(container.dance);
+    CommandScheduler.getInstance().schedule(container.areadetect);
     }
 
     /**
