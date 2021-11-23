@@ -37,7 +37,7 @@ public class Robot extends TimedRobot {
     m_rightStick = new Joystick(1);
     
     CommandScheduler.getInstance().enable();
-    CameraServer.getInstance().startAutomaticCapture();
+    //CameraServer.getInstance().startAutomaticCapture();
     container.drive.setInverted();
   
   }
