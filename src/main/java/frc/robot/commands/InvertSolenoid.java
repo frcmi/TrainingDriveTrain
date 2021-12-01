@@ -5,6 +5,8 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Pneumatics;
+import frc.robot.*;
 
 public class InvertSolenoid extends CommandBase {
   /** Creates a new InvertSolenoid. */
@@ -18,7 +20,9 @@ public class InvertSolenoid extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+      Robot.container.pneumatics.invertSolenoid();
+  }
 
   // Called once the command ends or is interrupted.
   @Override

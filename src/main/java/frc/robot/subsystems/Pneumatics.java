@@ -5,13 +5,19 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj.Solenoid;
 
 public class Pneumatics extends SubsystemBase {
   /** Creates a new Pneumatics. */
+  public Solenoid solenoid = new Solenoid(0);
   public Pneumatics() {}
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+  }
+
+  public void invertSolenoid() {
+    solenoid.set(!solenoid.get());
   }
 }

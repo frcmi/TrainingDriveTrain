@@ -25,31 +25,28 @@ import edu.wpi.first.cameraserver.CameraServer;
 //4 motor practice drivetrain with repeater piece (??? don't know what that is)
 public class Robot extends TimedRobot {
   
-  private Joystick m_leftStick;
-  private Joystick m_rightStick;
+
   public static RobotContainer container = new RobotContainer();
   Timer m_timer = new Timer();
 
 
   @Override
   public void robotInit() {
-    m_leftStick = new Joystick(0);
-    m_rightStick = new Joystick(1);
     
     CommandScheduler.getInstance().enable();
-    //CameraServer.getInstance().startAutomaticCapture();
+    CameraServer.getInstance().startAutomaticCapture();
     container.drive.setInverted();
   
   }
 
   @Override
   public void teleopPeriodic() {
-    container.drive.drive(m_leftStick.getY(), m_rightStick.getY());
+    container.drive.drive(Robot.container.leftStick.getY(), Robot.container.rightStick.getY());
   }
   @Override
   public void autonomousInit() {
     
-    CommandScheduler.getInstance().schedule(container.areadetect);
+    CommandScheduler.getInstance().schedule(container.dance);
     }
 
     /**

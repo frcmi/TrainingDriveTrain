@@ -5,9 +5,14 @@
 package frc.robot;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
+import edu.wpi.first.wpilibj.Joystick;
 
 public class RobotContainer {
+  public Joystick leftStick = new Joystick(0);
+  public Joystick rightStick = new Joystick(1);
   public DriveTrain drive = new DriveTrain();
+  public Shooter shooter = new Shooter();
+  public Pneumatics pneumatics = new Pneumatics();
   /** Creates a new RobotContainer. */
   Dance dance = new Dance();
   Areadetect areadetect = new Areadetect();

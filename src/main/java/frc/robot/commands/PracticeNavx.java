@@ -5,11 +5,12 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.*;
+import com.kauailabs.navx.frc.AHRS;
 
-public class Shoot extends CommandBase {
-  /** Creates a new Shoot. */
-  public Shoot() {
+public class PracticeNavx extends CommandBase {
+  /** Creates a new PracticeNavx. */
+  public AHRS ahrs;
+  public PracticeNavx() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -19,9 +20,7 @@ public class Shoot extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-    Robot.container.shooter.shoot();
-  }
+  public void execute() {}
 
   // Called once the command ends or is interrupted.
   @Override

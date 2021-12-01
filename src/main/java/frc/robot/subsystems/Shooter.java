@@ -5,13 +5,21 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.PWMTalonFX;
 
 public class Shooter extends SubsystemBase {
   /** Creates a new Shooter. */
+  private PWMTalonFX shootMotorTalon = new PWMTalonFX(4);
+  public SpeedController shootMotor = shootMotorTalon; 
   public Shooter() {}
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+  }
+
+  public void shoot() {
+    shootMotor.set(1.0);
   }
 }
