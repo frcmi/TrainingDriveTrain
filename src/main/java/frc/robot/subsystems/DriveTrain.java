@@ -9,17 +9,17 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.PWMTalonFX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 public class DriveTrain extends SubsystemBase {
   /** Creates a new DriveTrain. */
   
  
   //WPI_TalonFX m_frontLeft = new WPI_TalonFX(0);
-  PWMTalonFX m_rearLeft = new PWMTalonFX(2);
-  PWMTalonFX m_frontLeft = new PWMTalonFX(3);
+  WPI_TalonFX m_rearLeft = new WPI_TalonFX(2);
+  WPI_TalonFX m_frontLeft = new WPI_TalonFX(3);
  // SpeedController[] m_left = {m_frontLeft, m_rearLeft};
- PWMTalonFX m_frontRight = new PWMTalonFX(1);
- PWMTalonFX m_rearRight = new PWMTalonFX(0);
+ WPI_TalonFX m_frontRight = new WPI_TalonFX(1);
+ WPI_TalonFX m_rearRight = new WPI_TalonFX(0);
   //SpeedController[] m_right = {m_frontRight, m_rearRight};
   SpeedControllerGroup left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
   SpeedControllerGroup right = new SpeedControllerGroup(m_frontRight, m_rearRight);
