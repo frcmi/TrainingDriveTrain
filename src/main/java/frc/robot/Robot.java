@@ -41,7 +41,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    container.drive.drive(Robot.container.leftStick.getY() * 0.05, Robot.container.rightStick.getY() * 0.05);
+    container.drive.drive(Robot.container.leftStick.getY() * 0.3, Robot.container.rightStick.getY() * 0.3);
   }
   @Override
   public void autonomousInit() {

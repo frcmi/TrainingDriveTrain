@@ -15,11 +15,11 @@ public class DriveTrain extends SubsystemBase {
   
  
   //WPI_TalonFX m_frontLeft = new WPI_TalonFX(0);
-  PWMTalonFX m_rearLeft = new PWMTalonFX(1);
-  PWMTalonFX m_frontLeft = new PWMTalonFX(0);
+  PWMTalonFX m_rearLeft = new PWMTalonFX(2);
+  PWMTalonFX m_frontLeft = new PWMTalonFX(3);
  // SpeedController[] m_left = {m_frontLeft, m_rearLeft};
- PWMTalonFX m_frontRight = new PWMTalonFX(2);
- PWMTalonFX m_rearRight = new PWMTalonFX(3);
+ PWMTalonFX m_frontRight = new PWMTalonFX(1);
+ PWMTalonFX m_rearRight = new PWMTalonFX(0);
   //SpeedController[] m_right = {m_frontRight, m_rearRight};
   SpeedControllerGroup left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
   SpeedControllerGroup right = new SpeedControllerGroup(m_frontRight, m_rearRight);
