@@ -13,9 +13,12 @@ public class RobotContainer {
   public DriveTrain drive = new DriveTrain();
   public Shooter shooter = new Shooter();
   public Pneumatics pneumatics = new Pneumatics();
+  public Navx navx = new Navx();
+  
   /** Creates a new RobotContainer. */
   Dance dance = new Dance();
   Areadetect areadetect = new Areadetect();
+  ReadNavxValues readNavxValues = new ReadNavxValues();
   public RobotContainer() {
     // Use addRequirements() here to declare subsystem dependencies.
    

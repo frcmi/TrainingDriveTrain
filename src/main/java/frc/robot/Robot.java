@@ -16,6 +16,9 @@ import edu.wpi.first.wpilibj.SpeedController;
 import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.cameraserver.CameraServer;
+import com.kauailabs.navx.frc.AHRS;
+import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.DriverStation;
 
 
 /**
@@ -36,12 +39,21 @@ public class Robot extends TimedRobot {
     CommandScheduler.getInstance().enable();
     CameraServer.getInstance().startAutomaticCapture();
     container.drive.setInverted();
+    try {
+      /* Communicate w/navX-MXP via the MXP SPI Bus.                                     */
+      /* Alternatively:  I2C.Port.kMXP, SerialPort.Port.kMXP or SerialPort.Port.kUSB     */
+      /* See http://navx-mxp.kauailabs.com/guidance/selecting-an-interface/ for details. */
+      container.navx.ahrs = new AHRS(SPI.Port.kMXP); 
+  } catch (RuntimeException ex ) {
+      DriverStation.reportError("Error instantiating navX-MXP:  " + ex.getMessage(), true);
+  }
   
   }
 
   @Override
   public void teleopPeriodic() {
-    container.drive.drive(Robot.container.leftStick.getY() * 0.3, Robot.container.rightStick.getY() * 0.3);
+    container.drive.setInverted();
+    container.drive.drive(Robot.container.leftStick.getY(), Robot.container.rightStick.getY());
   }
   @Override
   public void autonomousInit() {

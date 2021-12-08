@@ -4,13 +4,14 @@
 
 package frc.robot.commands;
 
+import frc.robot.Robot;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import com.kauailabs.navx.frc.AHRS;
 
-public class PracticeNavx extends CommandBase {
+public class ReadNavxValues extends CommandBase {
   /** Creates a new PracticeNavx. */
-  public AHRS ahrs;
-  public PracticeNavx() {
+  boolean done = false;
+  public ReadNavxValues() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -20,7 +21,13 @@ public class PracticeNavx extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    Robot.container.navx.printYPR();
+    Robot.container.navx.printGyro();
+    Robot.container.navx.printAccel();
+    Robot.container.navx.printVeloDisp();
+    done = true;
+  }
 
   // Called once the command ends or is interrupted.
   @Override
@@ -29,6 +36,6 @@ public class PracticeNavx extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return done;
   }
 }
