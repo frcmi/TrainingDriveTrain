@@ -24,6 +24,11 @@ public class DriveTrain extends SubsystemBase {
   SpeedControllerGroup left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
   SpeedControllerGroup right = new SpeedControllerGroup(m_frontRight, m_rearRight);
   private DifferentialDrive m_myRobot = new DifferentialDrive(left,right);
+
+  SpeedController rL = m_rearLeft;
+  SpeedController fL = m_frontLeft;
+  SpeedController rR = m_rearRight;
+  SpeedController fR = m_frontRight;
   
   @Override
   public void periodic() {
@@ -40,5 +45,21 @@ public class DriveTrain extends SubsystemBase {
   }
   public double getRightMotors() {
       return right.get();
+  }
+
+  public void driveRL() {
+    rL.set(0.5);
+  }
+
+  public void driveFL() {
+    fL.set(0.5);
+  }
+
+  public void driveRR() {
+    rR.set(0.5);
+  }
+
+  public void driveFR() {
+    fR.set(0.5);
   }
 }
