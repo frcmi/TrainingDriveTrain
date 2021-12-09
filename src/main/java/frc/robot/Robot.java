@@ -52,7 +52,6 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    container.drive.setInverted();
    // container.drive.driveFL();
    // container.drive.driveFR();
    // container.drive.driveRL();

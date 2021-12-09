@@ -39,4 +39,12 @@ public class Navx extends SubsystemBase {
     System.out.println("Velocity: (" + ahrs.getDisplacementX() + "," + ahrs.getDisplacementY() + ")");
 
   }
+
+  public boolean isMoving() {
+    if (ahrs.getWorldLinearAccelX() > 0.1 && ahrs.getWorldLinearAccelY() > 0.1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
