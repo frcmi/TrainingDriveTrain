@@ -14,13 +14,10 @@ public class DriveTrain extends SubsystemBase {
   /** Creates a new DriveTrain. */
   
  
-  //WPI_TalonFX m_frontLeft = new WPI_TalonFX(0);
   WPI_TalonFX m_rearLeft = new WPI_TalonFX(2);
   WPI_TalonFX m_frontLeft = new WPI_TalonFX(3);
- // SpeedController[] m_left = {m_frontLeft, m_rearLeft};
  WPI_TalonFX m_frontRight = new WPI_TalonFX(1);
  WPI_TalonFX m_rearRight = new WPI_TalonFX(0);
-  //SpeedController[] m_right = {m_frontRight, m_rearRight};
   SpeedControllerGroup left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
   SpeedControllerGroup right = new SpeedControllerGroup(m_frontRight, m_rearRight);
   private DifferentialDrive m_myRobot = new DifferentialDrive(left,right);
@@ -47,19 +44,19 @@ public class DriveTrain extends SubsystemBase {
       return right.get();
   }
 
-  public void driveRL() {
-    rL.set(0.5);
+  public void driveRL(double d) {
+    rL.set(d);
   }
 
-  public void driveFL() {
-    fL.set(0.5);
+  public void driveFL(double d) {
+    fL.set(d);
   }
 
-  public void driveRR() {
-    rR.set(0.5);
+  public void driveRR(double d) {
+    rR.set(d);
   }
 
-  public void driveFR() {
-    fR.set(0.5);
+  public void driveFR(double d) {
+    fR.set(d);
   }
 }
