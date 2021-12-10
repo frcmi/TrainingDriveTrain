@@ -18,7 +18,14 @@ public class ShiftGear extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    if ((Robot.container.drive.getEncoderVelocityLeft() + Robot.container.drive.getEncoderVelocityRight()) /2 > 5.0 && !Robot.container.shiftingGearbox.getValue()) {
+      Robot.container.shiftingGearbox.shift();
+    } 
+    if ((Robot.container.drive.getEncoderVelocityLeft() + Robot.container.drive.getEncoderVelocityRight()) /2 < 5.0 && Robot.container.shiftingGearbox.getValue()) {
+      Robot.container.shiftingGearbox.shift();
+    }
+  }
 
   // Called once the command ends or is interrupted.
   @Override
