@@ -19,8 +19,15 @@ public class RobotContainer {
   Dance dance = new Dance();
   Areadetect areadetect = new Areadetect();
   ReadNavxValues readNavxValues = new ReadNavxValues();
+
+  //Constants
+  public static final double kDistancePerRevolution = 18.84;  // guestimate from your code
+  public static final double kPulsesPerRevolution = 1024;     // for an AS5145B Magnetic Encoder
+  public static final double kDistancePerPulse = kDistancePerRevolution / kPulsesPerRevolution;
+
   public RobotContainer() {
     // Use addRequirements() here to declare subsystem dependencies.
+    
    
   }
 

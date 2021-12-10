@@ -26,6 +26,11 @@ public class DriveTrain extends SubsystemBase {
   SpeedController fL = m_frontLeft;
   SpeedController rR = m_rearRight;
   SpeedController fR = m_frontRight;
+
+  //FeedbackDevice rLEncoder = new FeedbackDevice(0);
+
+  //m_rearLeft.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 5)
+
   
   @Override
   public void periodic() {
