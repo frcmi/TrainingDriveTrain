@@ -48,6 +48,9 @@ public class Robot extends TimedRobot {
       DriverStation.reportError("Error instantiating navX-MXP:  " + ex.getMessage(), true);
   }
   
+  if (Robot.container.shiftingGearbox.getValue()) {
+    Robot.container.shiftingGearbox.shift();
+  }
   }
 
   @Override
@@ -57,6 +60,7 @@ public class Robot extends TimedRobot {
    //container.drive.driveRL(Robot.container.leftStick.getY());
    //container.drive.driveRR(Robot.container.leftStick.getY());
   container.drive.drive(Robot.container.leftStick.getY(), Robot.container.rightStick.getY());
+  container.shiftGear.execute();
   }
   @Override
   public void autonomousInit() {

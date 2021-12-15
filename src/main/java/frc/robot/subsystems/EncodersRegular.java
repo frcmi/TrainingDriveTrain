@@ -3,7 +3,7 @@ import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Encoder;
 
-public class Encoders extends SubsystemBase {
+public class EncodersRegular extends SubsystemBase {
     public static final double kDistancePerRevolution = 18.84;  
     public static final double kPulsesPerRevolution = 1024;     
     public static final double kDistancePerPulse = kDistancePerRevolution / kPulsesPerRevolution;

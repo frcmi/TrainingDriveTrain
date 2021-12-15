@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.SpeedController;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import com.ctre.phoenix.motorcontrol.*;
 public class DriveTrain extends SubsystemBase {
   /** Creates a new DriveTrain. */
   
@@ -26,10 +27,6 @@ public class DriveTrain extends SubsystemBase {
   SpeedController fL = m_frontLeft;
   SpeedController rR = m_rearRight;
   SpeedController fR = m_frontRight;
-
-  //FeedbackDevice rLEncoder = new FeedbackDevice(0);
-
-  //m_rearLeft.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 5)
 
   
   @Override

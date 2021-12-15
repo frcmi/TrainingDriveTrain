@@ -5,6 +5,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Robot;
 
 public class ShiftGear extends CommandBase {
   /** Creates a new ShiftGear. */
@@ -17,6 +18,7 @@ public class ShiftGear extends CommandBase {
   public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
+  //When shifting, position is unreliable
   @Override
   public void execute() {
     if ((Robot.container.drive.getEncoderVelocityLeft() + Robot.container.drive.getEncoderVelocityRight()) /2 > 5.0 && !Robot.container.shiftingGearbox.getValue()) {

@@ -14,16 +14,20 @@ public class RobotContainer {
   public Shooter shooter = new Shooter();
   public Pneumatics pneumatics = new Pneumatics();
   public Navx navx = new Navx();
+  public ShiftingGearbox shiftingGearbox = new ShiftingGearbox();
   
   /** Creates a new RobotContainer. */
   Dance dance = new Dance();
   Areadetect areadetect = new Areadetect();
   ReadNavxValues readNavxValues = new ReadNavxValues();
+  ShiftGear shiftGear = new ShiftGear();
 
   //Constants
   public static final double kDistancePerRevolution = 18.84;  // guestimate from your code
   public static final double kPulsesPerRevolution = 1024;     // for an AS5145B Magnetic Encoder
   public static final double kDistancePerPulse = kDistancePerRevolution / kPulsesPerRevolution;
+
+  public static final double kUnitsPerRevolution = 2048; //constant for falcons
 
   public RobotContainer() {
     // Use addRequirements() here to declare subsystem dependencies.

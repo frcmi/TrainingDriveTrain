@@ -27,14 +27,18 @@ public class DanceWithEncoders extends CommandBase {
   public void execute() {
     do {
       Robot.container.drive.drive(0.5, 0.0);
-  } while (Robot.container.drive.getEncoderPositionLeft() / kUnitsPerRevolution < 50.0 && Robot.container.drive.getEncoderPositionLeft() / kUnitsPerRevolution < 50.0);
+  } while (Robot.container.drive.getEncoderPositionLeft() / RobotContainer.kUnitsPerRevolution < 50.0 && Robot.container.drive.getEncoderPositionLeft() / RobotContainer.kUnitsPerRevolution < 50.0);
   Robot.container.drive.drive(0.0, 0.0);
   done = true;
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    if (interrupted) {
+      Robot.container.drive.drive(0.0, 0.0);
+    }
+  }
 
   // Returns true when the command should end.
   @Override

@@ -5,13 +5,25 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj.Solenoid;
 
-public class ShiftingGerbox extends SubsystemBase {
+public class ShiftingGearbox extends SubsystemBase {
+  public Solenoid solenoid = new Solenoid(0);
+
   /** Creates a new ShiftingGerbox. */
-  public ShiftingGerbox() {}
+  public ShiftingGearbox() {}
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
+  public void shift() {
+    solenoid.set(!solenoid.get());
+  }
+
+  public boolean getValue() {
+    return solenoid.get();
+  }
+  
 }
