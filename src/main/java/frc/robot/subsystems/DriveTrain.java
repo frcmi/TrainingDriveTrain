@@ -39,6 +39,34 @@ public class DriveTrain extends SubsystemBase {
   public void setInverted() {
     right.setInverted(true);
   }
+
+  public void setEncoders() {
+    m_rearLeft.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
+    m_frontLeft.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
+    m_rearRight.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
+    m_frontRight.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
+  }
+
+  public double getEncoderVelocityLeft() {
+    System.out.println((m_rearLeft.getSelectedSensorVelocity() + m_frontLeft.getSelectedSensorVelocity())/2);
+    return ((m_rearLeft.getSelectedSensorVelocity() + m_frontLeft.getSelectedSensorVelocity())/2);
+  }
+
+  public double getEncoderVelocityRight() {
+    System.out.println((m_rearRight.getSelectedSensorVelocity() + m_frontRight.getSelectedSensorVelocity())/2);
+    return ((m_rearRight.getSelectedSensorVelocity() + m_frontRight.getSelectedSensorVelocity())/2);
+  }
+
+  public double getEncoderPositionLeft() {
+    System.out.println((m_rearLeft.getSelectedSensorPosition() + m_frontLeft.getSelectedSensorPosition())/2);
+    return ((m_rearLeft.getSelectedSensorPosition() + m_frontLeft.getSelectedSensorPosition())/2);
+  }
+
+  public double getEncoderPositionRight() {
+    System.out.println((m_rearRight.getSelectedSensorPosition() + m_frontRight.getSelectedSensorPosition())/2);
+    return ((m_rearRight.getSelectedSensorPosition() + m_frontRight.getSelectedSensorPosition())/2);
+  }
+
   public void drive(double l, double r) {
     m_myRobot.tankDrive(l, r);
   }
