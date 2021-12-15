@@ -10,10 +10,6 @@ import edu.wpi.first.wpilibj.Solenoid;
 public class ShiftingGearbox extends SubsystemBase {
   public Solenoid solenoid = new Solenoid(0);
 
-<<<<<<< HEAD
-=======
-public class ShiftingGearbox extends SubsystemBase {
->>>>>>> f1941e9bdf0324e3235eee4a17f9e32d94f445d4
   /** Creates a new ShiftingGerbox. */
   public ShiftingGearbox() {}
 
