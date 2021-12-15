@@ -5,11 +5,7 @@
 package frc.robot.commands;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-<<<<<<< HEAD
-import frc.robot.Robot;
-=======
 import frc.robot.subsystems.EncodersRegular;
->>>>>>> f1941e9bdf0324e3235eee4a17f9e32d94f445d4
 
 public class ShiftGear extends CommandBase {
   /** Creates a new ShiftGear. */

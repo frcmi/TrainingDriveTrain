@@ -7,16 +7,11 @@ import frc.robot.Robot;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Solenoid;
 
-public class ShiftingGearbox extends SubsystemBase {
-  public Solenoid solenoid = new Solenoid(0);
 
-<<<<<<< HEAD
-=======
-public class ShiftingGearbox extends SubsystemBase {
->>>>>>> f1941e9bdf0324e3235eee4a17f9e32d94f445d4
+public class ShiftingGearBox extends SubsystemBase {
   /** Creates a new ShiftingGerbox. */
-  public ShiftingGearbox() {}
-
+  public ShiftingGearBox() {}
+  public Solenoid solenoid = new Solenoid(0);
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

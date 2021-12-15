@@ -28,11 +28,7 @@ public class DanceWithEncoders extends CommandBase {
   public void execute() {
     do {
       Robot.container.drive.drive(0.5, 0.0);
-<<<<<<< HEAD
-  } while (Robot.container.drive.getEncoderPositionLeft() / RobotContainer.kUnitsPerRevolution < 50.0 && Robot.container.drive.getEncoderPositionLeft() / RobotContainer.kUnitsPerRevolution < 50.0);
-=======
   } while (encoders.getLeftEncoders() / encoders.kDistancePerRevolution < 50.0 && encoders.getLeftEncoders() / encoders.kDistancePerRevolution < 50.0);
->>>>>>> f1941e9bdf0324e3235eee4a17f9e32d94f445d4
   Robot.container.drive.drive(0.0, 0.0);
   done = true;
   }
