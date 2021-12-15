@@ -12,8 +12,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 public class DanceWithEncoders extends CommandBase {
   /** Creates a new DanceWithEncoders. */
   private boolean done = false;
-  
-  EncodersRegular encoders = Robot.container.encodersRegular;
+
 
   public DanceWithEncoders() {
     // Use addRequirements() here to declare subsystem dependencies.
@@ -28,7 +27,7 @@ public class DanceWithEncoders extends CommandBase {
   public void execute() {
     do {
       Robot.container.drive.drive(0.5, 0.0);
-  } while (encoders.getLeftEncoders() / encoders.kDistancePerRevolution < 50.0 && encoders.getLeftEncoders() / encoders.kDistancePerRevolution < 50.0);
+  } while (Robot.container.drive.getEncoderPositionLeft() / RobotContainer.kUnitsPerRevolution < 50.0 && Robot.container.drive.getEncoderPositionRight() / RobotContainer.kUnitsPerRevolution < 50.0);
   Robot.container.drive.drive(0.0, 0.0);
   done = true;
   }
