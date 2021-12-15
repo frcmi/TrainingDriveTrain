@@ -3,12 +3,12 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems;
-
+import frc.robot.Robot;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class ShiftingGerbox extends SubsystemBase {
+public class ShiftingGearbox extends SubsystemBase {
   /** Creates a new ShiftingGerbox. */
-  public ShiftingGerbox() {}
+  public ShiftingGearbox() {}
 
   @Override
   public void periodic() {
