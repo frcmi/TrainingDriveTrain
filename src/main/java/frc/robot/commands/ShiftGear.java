@@ -24,7 +24,7 @@ public class ShiftGear extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   //When shifting, position is unreliable
   @Override
-  public void execute() {
+  public void execute() { //very arbitrary values. I didn't know what to put or what units anything is in
     if ((Robot.container.drive.getEncoderVelocityLeft() + Robot.container.drive.getEncoderVelocityRight()) /2 > 5.0 && !Robot.container.shiftingGearbox.getValue()) {
       Robot.container.shiftingGearbox.shift();
     } 
