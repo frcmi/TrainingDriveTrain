@@ -14,8 +14,8 @@ public class RobotContainer {
   public Shooter shooter = new Shooter();
   public Pneumatics pneumatics = new Pneumatics();
   public Navx navx = new Navx();
-  public ShiftingGearbox shiftingGearbox = new ShiftingGearbox();
-  public EncodersRegular encodersRegular = new EncodersRegular();  
+  public EncodersRegular encodersRegular = new EncodersRegular();
+  public ShiftingGearBox shiftingGearbox = new ShiftingGearBox();
   
   /** Creates a new RobotContainer. */
   Dance dance = new Dance();
