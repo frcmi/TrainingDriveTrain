@@ -60,7 +60,7 @@ public class Robot extends TimedRobot {
    //container.drive.driveRL(Robot.container.leftStick.getY());
    //container.drive.driveRR(Robot.container.leftStick.getY());
   container.drive.drive(Robot.container.leftStick.getY(), Robot.container.rightStick.getY());
-  container.shiftGear.execute();
+  container.shiftGear.execute(); //probably not how you're supposed to do it
   }
   @Override
   public void autonomousInit() {
