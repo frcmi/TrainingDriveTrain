@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.smartdashboard.*;
 import edu.wpi.first.wpilibj2.command.Command;
 
 
-public class RobotContainer { 
+public class RobotContainer {
 
   //Joysticks and buttons
   public Joystick leftStick = new Joystick(0);
@@ -31,11 +31,12 @@ public class RobotContainer {
   Command dance = new Dance();
   Command areadetect = new Areadetect();
   Command readNavxValues = new ReadNavxValues();
-  Command shiftGear = new ShiftGear();
+  Command shiftGearUp = new ShiftGearUp();
+  Command shiftGearDown = new ShiftGearDown();
 
   //creates sendablechooser
   public SendableChooser<Command> m_chooser = new SendableChooser<>();
->>>>>>> d175daf72a8209929de686b122160b9e73278b5f
+
 
   //Constants
   public static final double kDistancePerRevolution = 18.84;  // guestimate from your code
