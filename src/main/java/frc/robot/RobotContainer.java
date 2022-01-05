@@ -6,16 +6,22 @@ package frc.robot;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class RobotContainer {
+
+  //Joysticks and buttons
   public Joystick leftStick = new Joystick(0);
   public Joystick rightStick = new Joystick(1);
+  public JoystickButton resetSensorsButton = new JoystickButton(rightStick, 3);
+
+  //Subsystems
   public DriveTrain drive = new DriveTrain();
   public Shooter shooter = new Shooter();
   public Pneumatics pneumatics = new Pneumatics();
   public Navx navx = new Navx();
   public EncodersRegular encodersRegular = new EncodersRegular();
-  public ShiftingGearBox shiftingGearbox = new ShiftingGearBox();
+  public ShiftingGearbox shiftingGearbox = new ShiftingGearbox();
   
   /** Creates a new RobotContainer. */
   Dance dance = new Dance();

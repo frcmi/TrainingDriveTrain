@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Solenoid;
 
 
-public class ShiftingGearBox extends SubsystemBase {
+public class ShiftingGearbox extends SubsystemBase {
   /** Creates a new ShiftingGerbox. */
-  public ShiftingGearBox() {}
+  public ShiftingGearbox() {}
   public Solenoid solenoid = new Solenoid(0);
   @Override
   public void periodic() {
