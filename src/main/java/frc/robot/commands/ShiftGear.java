@@ -21,12 +21,17 @@ public class ShiftGear extends CommandBase {
   //When shifting, position is unreliable
   @Override
   public void execute() { //very arbitrary values. I didn't know what to put or what units anything is in
-    if ((Robot.container.drive.getEncoderVelocityLeft() + Robot.container.drive.getEncoderVelocityRight()) /2 > 5.0 && !Robot.container.shiftingGearbox.getValue()) {
+    if (Robot.container.changeGearUp.get() == true && !Robot.container.shiftingGearbox.getValue()) { 
+      Robot.container.shiftingGearbox.shift();
+    } else if (Robot.container.changeGearDown.get() == true && Robot.container.shiftingGearbox.getValue()) {
+
+    }
+    /*if ((Robot.container.drive.getEncoderVelocityLeft() + Robot.container.drive.getEncoderVelocityRight()) /2 > 5.0 &&  ) {
       Robot.container.shiftingGearbox.shift();
     } 
     if ((Robot.container.drive.getEncoderVelocityLeft() + Robot.container.drive.getEncoderVelocityRight()) /2 < 5.0 && Robot.container.shiftingGearbox.getValue()) {
       Robot.container.shiftingGearbox.shift();
-    }
+    } */
   }
 
   // Called once the command ends or is interrupted.
