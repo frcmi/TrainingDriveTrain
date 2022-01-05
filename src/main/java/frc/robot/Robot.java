@@ -29,15 +29,19 @@ import edu.wpi.first.wpilibj.DriverStation;
 public class Robot extends TimedRobot {
   
 
-  public static RobotContainer container = new RobotContainer();
+  public static RobotContainer container;
   Timer m_timer = new Timer();
 
   @Override
   public void robotInit() {
+    container = new RobotContainer();
+    container.initialize();
     
     CommandScheduler.getInstance().enable();
     CameraServer.getInstance().startAutomaticCapture();
     container.drive.setInverted();
+
+    //navx initialization
     try {
       /* Communicate w/navX-MXP via the MXP SPI Bus.                                     */
       /* Alternatively:  I2C.Port.kMXP, SerialPort.Port.kMXP or SerialPort.Port.kUSB     */
@@ -47,6 +51,7 @@ public class Robot extends TimedRobot {
       DriverStation.reportError("Error instantiating navX-MXP:  " + ex.getMessage(), true);
   }
   
+  //set gear go default. Out???
   if (Robot.container.shiftingGearbox.getValue()) {
     Robot.container.shiftingGearbox.shift();
   }
@@ -59,7 +64,7 @@ public class Robot extends TimedRobot {
    //container.drive.driveRL(Robot.container.leftStick.getY());
    //container.drive.driveRR(Robot.container.leftStick.getY());
   container.drive.drive(Robot.container.leftStick.getY(), Robot.container.rightStick.getY());
-  container.shiftGear.execute(); //probably not how you're supposed to do it
+  
   }
   @Override
   public void autonomousInit() {
