@@ -5,15 +5,16 @@
 package frc.robot;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class RobotContainer {
 
   //Joysticks and buttons
   public Joystick leftStick = new Joystick(0);
   public Joystick rightStick = new Joystick(1);
-  public JoystickButton resetSensorsButton = new JoystickButton(rightStick, 3);
+  public JoystickButton shiftGearUpButton = new JoystickButton(rightStick, 2); //go fast
+  public JoystickButton shiftGearDownButton = new JoystickButton(rightStick, 3); //go slow
 
   //Subsystems
   public DriveTrain drive = new DriveTrain();
@@ -22,12 +23,16 @@ public class RobotContainer {
   public Navx navx = new Navx();
   public EncodersRegular encodersRegular = new EncodersRegular();
   public ShiftingGearbox shiftingGearbox = new ShiftingGearbox();
+
+  //Commands
+  public ShiftGearUp shiftGearUp = new ShiftGearUp();
+  public ShiftGearDown shiftGearDown = new ShiftGearDown();
   
   /** Creates a new RobotContainer. */
   Dance dance = new Dance();
   Areadetect areadetect = new Areadetect();
   ReadNavxValues readNavxValues = new ReadNavxValues();
-  ShiftGear shiftGear = new ShiftGear();
+  ShiftGearUp shiftGear = new ShiftGearUp();
 
   //Constants
   public static final double kDistancePerRevolution = 18.84;  // guestimate from your code
@@ -38,8 +43,16 @@ public class RobotContainer {
 
   public RobotContainer() {
     // Use addRequirements() here to declare subsystem dependencies.
-    
    
+  }
+
+  public void initialize() {
+    configureButtonBindings();
+  }
+
+  private void configureButtonBindings() {
+    shiftGearUpButton.whenPressed(shiftGearUp);
+    shiftGearDownButton.whenPressed(shiftGearDown);
   }
 
 
