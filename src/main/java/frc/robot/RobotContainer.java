@@ -6,9 +6,12 @@ package frc.robot;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.*;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
-public class RobotContainer {
+
+public class RobotContainer { 
 
   //Joysticks and buttons
   public Joystick leftStick = new Joystick(0);
@@ -24,10 +27,13 @@ public class RobotContainer {
   public ShiftingGearbox shiftingGearbox = new ShiftingGearbox();
   
   /** Creates a new RobotContainer. */
-  Dance dance = new Dance();
-  Areadetect areadetect = new Areadetect();
-  ReadNavxValues readNavxValues = new ReadNavxValues();
-  ShiftGear shiftGear = new ShiftGear();
+  Command dance = new Dance();
+  Command areadetect = new Areadetect();
+  Command readNavxValues = new ReadNavxValues();
+  Command shiftGear = new ShiftGear();
+
+  //creates sendablechooser
+  public SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   //Constants
   public static final double kDistancePerRevolution = 18.84;  // guestimate from your code
@@ -38,7 +44,10 @@ public class RobotContainer {
 
   public RobotContainer() {
     // Use addRequirements() here to declare subsystem dependencies.
-    
+    m_chooser.setDefaultOption("readNavxValues", readNavxValues);
+    m_chooser.addOption("dance", dance);
+    SmartDashboard.putData(m_chooser);
+
    
   }
 
