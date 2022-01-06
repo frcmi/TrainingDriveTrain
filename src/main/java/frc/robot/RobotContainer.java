@@ -16,8 +16,7 @@ public class RobotContainer {
   //Joysticks and buttons
   public Joystick leftStick = new Joystick(0);
   public Joystick rightStick = new Joystick(1);
-  public JoystickButton shiftGearUpButton = new JoystickButton(rightStick, 2); //go fast
-  public JoystickButton shiftGearDownButton = new JoystickButton(rightStick, 3); //go slow
+  public JoystickButton shiftGearButton = new JoystickButton(rightStick, 2); //go fast
 
   //Subsystems
   public DriveTrain drive = new DriveTrain();
@@ -27,12 +26,11 @@ public class RobotContainer {
   public EncodersRegular encodersRegular = new EncodersRegular();
   public ShiftingGearbox shiftingGearbox = new ShiftingGearbox();
 
-  /** Creates a new RobotContainer. */
+  //Commands
   Command dance = new Dance();
   Command areadetect = new Areadetect();
   Command readNavxValues = new ReadNavxValues();
-  Command shiftGearUp = new ShiftGearUp();
-  Command shiftGearDown = new ShiftGearDown();
+  Command shiftGear = new ShiftGear();
 
   //creates sendablechooser
   public SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -58,8 +56,7 @@ public class RobotContainer {
   }
 
   private void configureButtonBindings() {
-    shiftGearUpButton.whenPressed(shiftGearUp);
-    shiftGearDownButton.whenPressed(shiftGearDown);
+    shiftGearButton.whenPressed(shiftGear);
   }
 
 
