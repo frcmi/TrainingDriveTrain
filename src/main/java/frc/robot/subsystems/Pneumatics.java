@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 
 public class Pneumatics extends SubsystemBase {
   /** Creates a new Pneumatics. */
-  public Solenoid solenoid = new Solenoid(0);
+  public Solenoid solenoid = new Solenoid(1);
   public Pneumatics() {}
 
   @Override
