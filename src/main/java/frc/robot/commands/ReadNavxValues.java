@@ -6,7 +6,6 @@ package frc.robot.commands;
 
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import com.kauailabs.navx.frc.AHRS;
 
 public class ReadNavxValues extends CommandBase {
   /** Creates a new PracticeNavx. */

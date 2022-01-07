@@ -17,11 +17,17 @@ public class ShiftingGearbox extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
+  //high gear (faster but less torque) is extended piston. .set() == true is extended
   public void shift() {
     solenoid.set(!solenoid.get());
   }
 
   public boolean getValue() {
+    if (solenoid.get() == true) {
+      System.out.println("Speedy");
+    } else {
+      System.out.println("Tanky");
+    }
     return solenoid.get();
   }
   

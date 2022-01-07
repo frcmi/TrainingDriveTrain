@@ -5,12 +5,12 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Pneumatics;
 import frc.robot.*;
 
 public class InvertSolenoid extends CommandBase {
   /** Creates a new InvertSolenoid. */
   public InvertSolenoid() {
+    addRequirements(Robot.container.pneumatics);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
