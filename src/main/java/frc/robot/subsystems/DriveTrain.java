@@ -15,12 +15,12 @@ public class DriveTrain extends SubsystemBase {
   /** Creates a new DriveTrain. */
   
  
-  WPI_TalonFX m_rearLeft = new WPI_TalonFX(2);
-  WPI_TalonFX m_middleLeft = new WPI_TalonFX(4); // new motor
-  WPI_TalonFX m_frontLeft = new WPI_TalonFX(3);
- WPI_TalonFX m_frontRight = new WPI_TalonFX(1);
+  WPI_TalonFX m_rearLeft = new WPI_TalonFX(3);
+  WPI_TalonFX m_middleLeft = new WPI_TalonFX(2); // new motor
+  WPI_TalonFX m_frontLeft = new WPI_TalonFX(1);
+ WPI_TalonFX m_frontRight = new WPI_TalonFX(4);
  WPI_TalonFX m_middleRight = new WPI_TalonFX(5); // new motor
- WPI_TalonFX m_rearRight = new WPI_TalonFX(0);
+ WPI_TalonFX m_rearRight = new WPI_TalonFX(6);
   SpeedControllerGroup left = new SpeedControllerGroup(m_frontLeft, m_middleLeft, m_rearLeft);
   SpeedControllerGroup right = new SpeedControllerGroup(m_frontRight, m_middleRight, m_rearRight);
   private DifferentialDrive m_myRobot = new DifferentialDrive(left,right);
