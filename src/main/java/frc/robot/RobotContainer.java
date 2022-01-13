@@ -17,6 +17,7 @@ public class RobotContainer {
   public Joystick leftStick = new Joystick(0);
   public Joystick rightStick = new Joystick(1);
   public JoystickButton shiftGearButton = new JoystickButton(rightStick, 2); //go fast
+  public JoystickButton solenoidPew = new JoystickButton(rightStick, 1); //go fast
 
   //Subsystems
   public DriveTrain drive = new DriveTrain();
@@ -31,6 +32,7 @@ public class RobotContainer {
   Command areadetect = new Areadetect();
   Command readNavxValues = new ReadNavxValues();
   Command shiftGear = new ShiftGear();
+  Command invertSolenoid = new InvertSolenoid();
 
   //creates sendablechooser
   public SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -57,6 +59,7 @@ public class RobotContainer {
 
   private void configureButtonBindings() {
     shiftGearButton.whenPressed(shiftGear);
+    solenoidPew.whenPressed(invertSolenoid);
   }
 
 
